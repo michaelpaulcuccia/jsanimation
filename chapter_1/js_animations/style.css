@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+section {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  padding: 1rem 1rem;
+  font-size: 1.5 rem;
+  border: none;
+  color: #fff;
+  background-color: rgb(40, 40, 40);
+}
+
+p {
+  opacity: 1;
+  transition: opacity 0.25s ease-out;
+}
+
+nav {
+  height: 10vh;
+  background-color: rgb(40, 40, 40);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Y = up, down */
+  /* transition: transform 0.75s ease-out; */
+  transition: all 1.25s ease-out 0.05s;
+}
+
+/* ANIMATION CLASSES */
+.nav-slide {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.fade {
+  opacity: 0;
+}
