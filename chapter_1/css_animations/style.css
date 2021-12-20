@@ -1,0 +1,22 @@
+section {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  padding: 1rem 1rem;
+  font-size: 1.5 rem;
+  border: none;
+  color: #fff;
+  background-color: rgb(40, 40, 40);
+  /* ANIMATION property, duration, timing */
+  transition: background-color 0.75s ease-out;
+  transition: color 0.65s ease-in;
+}
+
+button:hover {
+  background-color: rgb(165, 165, 165);
+  color: #000;
+}
