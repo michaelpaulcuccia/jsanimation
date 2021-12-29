@@ -5,16 +5,18 @@
 }
 
 .cookie-container {
-  background: linear-gradient(260deg, #ff748c 0, #ff74af 100%);
+  /* background: linear-gradient(260deg, #ff748c 0, #ff74af 100%); */
+  /* color: white; */
+  background: linear-gradient(260deg, #ffd700 0, #81c807 100%);
+  color: #3d3d3d;
   position: absolute;
   top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
   display: flex;
   align-items: center;
-  width: 20rem;
-  height: 10rem;
+  width: 30rem;
+  height: 15rem;
   border-radius: 1.2rem;
   padding: 1rem;
   font-family: "Poppins", sans-serif;
@@ -22,29 +24,46 @@
   overflow: hidden;
 }
 
-.text {
-  width: 70%;
+.cookie {
+  /* transform: scale(0.6); */
+  overflow: visible;
 }
 
-.cookie {
-  transform: scale(0.6);
+.cookie-crumble {
+  overflow: visible;
+}
+
+.text {
+  width: 70%;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .cookie-title {
-  font-size: 1.2rem;
+  font-size: 24px;
   font-weight: lighter;
+  padding-bottom: 10px;
 }
 
 .cookie-subtitle {
   font-weight: bold;
-  font-size: 0.7rem;
-  padding: 0.5rem 0;
+  font-size: 16px;
+  padding-bottom: 10px;
+}
+
+.legal {
+  font-size: 8px;
+  padding-bottom: 10px;
 }
 
 button {
   border-style: none;
   padding: 0.5rem 1rem;
-  color: #ff74af;
+  /* color: #ff74af; */
+  color: #3d3d3d;
   font-family: "Poppins", sans-serif;
   font-weight: bold;
   font-size: 0.7rem;

@@ -1,3 +1,4 @@
+//ENTRANCE ANIMATIONS
 const tl = gsap.timeline({
   defaults: {
     duration: 0.75,
@@ -12,7 +13,6 @@ tl.from(
   },
   {
     scale: 1,
-    //ease: "elastic.out(1, 0.4)",
   }
 );
 
@@ -35,3 +35,35 @@ tl.fromTo(
   //syncs with previous animation
   "<"
 );
+
+//DOM ELEMENT
+const button = document.querySelector("button");
+
+//BUTTON
+button.addEventListener("click", () => {
+  const tl = gsap.timeline({
+    defaults: {
+      duration: 0.75,
+    },
+  });
+
+  tl.fromTo(
+    ".cookie",
+    {
+      y: 0,
+      rotation: "0deg",
+    },
+    {
+      rotation: "-270deg",
+      y: -10,
+      yoyo: true,
+      repeat: 2,
+    }
+  );
+
+  tl.to(".cookie-container", {
+    opacity: 0,
+    y: 100,
+    duration: 0.5,
+  });
+});
