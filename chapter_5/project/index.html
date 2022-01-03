@@ -35,6 +35,8 @@
             name="name"
             autocomplete="off"
             class="input-name input"
+            minlength='5'
+            required
           />
           <svg
             class="line-svg"
@@ -60,6 +62,8 @@
             name="email"
             autocomplete="off"
             class="input-email input"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+            required
           />
           <svg
             class="line-svg"
@@ -85,6 +89,8 @@
             name="tel"
             autocomplete="off"
             class="input-number input"
+            pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+            required
           />
           <svg
             class="line-svg"
