@@ -1,3 +1,4 @@
+//FORM DOM ELEMENTS, TIMELINE - does not include checkbox
 const containers = document.querySelectorAll('.input-container');
 const form = document.querySelector('form');
 const tl = gsap.timeline({ defaults: { duration: 1} });
@@ -54,3 +55,18 @@ form.addEventListener('click', () => {
 
     })
 });
+
+//CHECKBOX DOM ELEMENT, TIMELINE
+const checkbox = document.querySelector('.checkbox');
+const tl2 = gsap.timeline({defaults: { duration: .5, ease: 'Power2.eastOut'} });
+////const tickMarkPath = document.querySelector('.tick-mark path');
+//const pathLength = tickMarkPath.getTotalLength();
+
+checkbox.addEventListener('click', () => {
+    //NOTE: Position is bottom-right corner of box, need to fix
+    if(checkbox.checked) {
+        tl2.to('.checkbox-fill', 
+            {top: '0%'}
+        );
+    }
+})
