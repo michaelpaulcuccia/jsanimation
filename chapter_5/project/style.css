@@ -86,6 +86,8 @@ form {
 .checkbox {
   opacity: 0;
   cursor: pointer;
+  /* fixes lower-right hand corner only click */
+  z-index: 3;
 }
 
 .checkbox-label {

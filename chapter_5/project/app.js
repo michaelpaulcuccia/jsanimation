@@ -59,14 +59,37 @@ form.addEventListener('click', () => {
 //CHECKBOX DOM ELEMENT, TIMELINE
 const checkbox = document.querySelector('.checkbox');
 const tl2 = gsap.timeline({defaults: { duration: .5, ease: 'Power2.eastOut'} });
-////const tickMarkPath = document.querySelector('.tick-mark path');
-//const pathLength = tickMarkPath.getTotalLength();
+const tickMarkPath = document.querySelector('.tick-mark path');
+const pathLength = tickMarkPath.getTotalLength();
+//console.log(pathLength)
+
+gsap.set(tickMarkPath, {strokeDashoffset: pathLength, strokeDasharray: pathLength});
 
 checkbox.addEventListener('click', () => {
-    //NOTE: Position is bottom-right corner of box, need to fix
     if(checkbox.checked) {
         tl2.to('.checkbox-fill', 
             {top: '0%'}
         );
+        tl2.fromTo(tickMarkPath, 
+            {strokeDashoffset: pathLength},
+            {strokeDashoffset: 0}, '<50%'
+        );
+        //"<" happens at same time
+        tl2.to('.checkbox-label',
+            {color: '#6391e8'}, "<"
+        );
+    } else {
+        //reverts if statement
+        tl2.to('.checkbox-fill', 
+            {top: "100%"}
+        );
+        tl2.fromTo(tickMarkPath, 
+            {strokeDashoffset: 0}, 
+            {strokeDashoffset: pathLength}, '<50%'
+        );
+        tl2.to(".checkbox-label",
+        //NOTE: not working with "<", strange...
+            {color: "#777474"}, "<"
+        );
     }
-})
+});
