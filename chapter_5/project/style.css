@@ -21,6 +21,7 @@ form {
   border-radius: 2rem;
   padding: 3rem 5rem;
   display: flex;
+  position: relative;
 }
 
 .title {
@@ -147,6 +148,13 @@ button {
   align-self: flex-start;
 }
 
+#character {
+  position: absolute;
+  transform: scale(.6);
+  bottom: 0;
+  left: 0;
+}
+
 @media (max-width: 812px) {
   form {
     width: 90vw;
@@ -157,6 +165,12 @@ button {
 
   .line-svg {
     width: 100%;
+  }
+
+  #character {
+    transform: scale(.4);
+    left: 120px;
+    bottom: -110px;
   }
 
 }

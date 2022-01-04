@@ -93,3 +93,14 @@ checkbox.addEventListener('click', () => {
         );
     }
 });
+
+//CHARACTER
+
+//BLINKING EYES
+gsap.set('.eyes', 
+    {transformOrigin: 'center'}
+);
+gsap.fromTo('.eyes', 
+    {scaleY: 1},
+    {scaleY: .1, repeat: -1, yoyo: true, repeatDelay: 1.5, ease: "Power2.easeOut"}
+);
