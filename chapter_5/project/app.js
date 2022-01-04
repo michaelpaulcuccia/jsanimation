@@ -94,8 +94,6 @@ checkbox.addEventListener('click', () => {
     }
 });
 
-//CHARACTER
-
 //BLINKING EYES
 gsap.set('.eyes', 
     {transformOrigin: 'center'}
@@ -104,3 +102,26 @@ gsap.fromTo('.eyes',
     {scaleY: 1},
     {scaleY: .1, repeat: -1, yoyo: true, repeatDelay: 1.5, ease: "Power2.easeOut"}
 );
+
+//SUBMIT DOM ELEMENT, TIMELINE
+const button = document.querySelector('button');
+const tl3 = gsap.timeline({defaults: {duration: .75, ease: 'Power2.easeOut'}});
+
+button.addEventListener('click', e => {
+    e.preventDefault();
+    
+    tl3.to('.contact-right, .contact-left', 
+        {y: 30, opacity: 0, pointerEvents: 'none'}
+    );
+    tl3.to('form', 
+        {scale: .8}, '<'
+    );
+    tl3.fromTo('.submitted',
+        {opacity: 0, y: 30},
+        {opacity: 1, y:0}
+    );
+    gsap.fromTo('#arm', 
+        {rotation: 0, y:0},
+        {rotation: -35, y:2, ease: "elastic(3, .3)", duration: 2, delay: 1}
+    );
+})
